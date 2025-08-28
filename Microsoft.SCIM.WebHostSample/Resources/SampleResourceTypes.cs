@@ -14,7 +14,12 @@ namespace Microsoft.SCIM.WebHostSample.Resources
                 {
                     Identifier = Types.User,
                     Endpoint = new Uri($"{SampleConstants.SampleScimEndpoint}/Users"),
-                    Schema = SampleConstants.UserEnterpriseSchema
+                    Schema = $"{SampleConstants.Core2SchemaPrefix}{Types.User}",
+                    SchemaExtensions = new Core2SchemaExtensions
+                    {
+                        Schema = SampleConstants.UserEnterpriseSchema,
+                        Required = false
+                    }
                 };
 
                 return userResource;

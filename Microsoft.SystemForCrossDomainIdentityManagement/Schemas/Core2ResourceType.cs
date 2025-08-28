@@ -5,6 +5,7 @@
 namespace Microsoft.SCIM
 {
     using System;
+    using System.Collections.Generic;
     using System.Runtime.Serialization;
 
     [DataContract]
@@ -58,7 +59,7 @@ namespace Microsoft.SCIM
         }
 
         [DataMember(Name = AttributeNames.SchemaExtensions)]
-        public Core2SchemaExtensions SchemaExtensions
+        public List<Core2SchemaExtensions> SchemaExtensions
         {
             get;
             set;

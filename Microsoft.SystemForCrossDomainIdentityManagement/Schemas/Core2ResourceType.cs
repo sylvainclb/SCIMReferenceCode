@@ -57,6 +57,13 @@ namespace Microsoft.SCIM
             set;
         }
 
+        [DataMember(Name = AttributeNames.SchemaExtensions)]
+        public Core2SchemaExtensions SchemaExtensions
+        {
+            get;
+            set;
+        }
+
         private void InitializeEndpoint(string value)
         {
             if (string.IsNullOrWhiteSpace(value))
